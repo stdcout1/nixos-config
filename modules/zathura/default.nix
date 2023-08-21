@@ -1,0 +1,19 @@
+{ pkgs, lib, config, ... }:
+with lib;
+let cfg = config.modules.zathura;
+in {
+    options.modules.zathura = { enable = mkEnableOption "zathura"; }; 
+
+    config = mkIf cfg.enable {
+
+xdg.mimeApps.defaultApplications = {
+    	pdf = {
+	    cmd = lib.getExe pkgs.zathura;
+	    desktop = "zathura";
+	};
+    };
+    	programs.zathura = {
+	    enable = true;
+	};
+    };
+}
