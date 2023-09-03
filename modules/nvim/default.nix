@@ -21,7 +21,7 @@ in
     home.packages = with pkgs; [
       rnix-lsp nixfmt # Nix
       lua-language-server stylua # Lua
-      rustc cargo rust-analyzer # Rust
+      rustc cargo rust-analyzer gcc # Rust
       ripgrep
       unzip # for lsp-zero
     ];
