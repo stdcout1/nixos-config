@@ -21,6 +21,7 @@ in
     home.packages = with pkgs; [
       rnix-lsp nixfmt # Nix
       lua-language-server stylua # Lua
+      rustc cargo rust-analyzer # Rust
       ripgrep
       unzip # for lsp-zero
     ];
@@ -36,10 +37,6 @@ in
         nvim-cmp
         cmp-nvim-lsp
         luasnip
-        #rust
-        cargo
-        rustc
-        rust-analyzer
         {
           plugin = gruvbox;
           config = "colorscheme gruvbox";
