@@ -61,7 +61,7 @@ in
           plugin = nvim-lsp-zero;
           config = ''
             lua << EOF
-            local lsp = require('lsp-zero').preset("recommended")
+            local lsp = require('lsp-zero')
             lsp.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
@@ -70,7 +70,6 @@ in
             lsp.setup_servers({'lua_ls', 'rnix', 'rust_analyzer'})
             -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-            lsp.setup()
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
