@@ -36,6 +36,10 @@ in
         nvim-cmp
         cmp-nvim-lsp
         luasnip
+        #rust
+        cargo
+        rustc
+        rust-analyzer
         {
           plugin = gruvbox;
           config = "colorscheme gruvbox";
@@ -66,27 +70,12 @@ in
                 -- to learn the available actions
                 lsp.default_keymaps({buffer = bufnr})
             end)
-            lsp.setup_servers({'lua_ls', 'rnix'})
+            lsp.setup_servers({'lua_ls', 'rnix', 'rust_analyzer'})
             -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
             require('lspconfig').rnix.setup{}
+            require('lspconfig').rust_analyzer.setup{}
             lsp.setup()
-            local cmp = require('cmp')
-            local cmp_action = require('lsp-zero').cmp_action()
-
-            cmp.setup({
-                mapping = {
-                -- `Enter` key to confirm completion
-                ['<CR>'] = cmp.mapping.confirm({select = false}),
-
-                -- Ctrl+Space to trigger completion menu
-                ['<C-Space>'] = cmp.mapping.complete(),
-
-                -- Navigate between snippet placeholder
-                ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-                ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-                }
-            })
             EOF
           '';
         }

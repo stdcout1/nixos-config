@@ -29,7 +29,7 @@ map('n', '<leader>pf', ':Telescope find_files <CR>', opts)
 map('n', '<C-p>', ':Telescope git_files <CR>', opts)
 map('n', 'j', 'gj', opts)
 map('n', 'k', 'gk', opts)
-map('n', ';', ':', { noremap = true } )
+map('n', ';', ':', { noremap = true })
 
 -- Preformance
 o.lazyredraw = true;
