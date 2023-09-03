@@ -8,7 +8,7 @@ let
       owner = "VonHeikemen";
       repo = "lsp-zero.nvim";
       rev = "0d79f282566a95b0d6b2f1aab9ada54c3de0f92e"; #branch 2.X ... need to update manually 
-      hash = "sha256-SvshWzbgLsY2+l32R6+zkXurlIqUeMbKNUzI5B1ygIA=";
+      hash = lib.fakeSha256;
     };
   };
 in
