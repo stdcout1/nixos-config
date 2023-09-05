@@ -24,6 +24,7 @@ in
       rustc cargo rust-analyzer gcc # Rust
       ripgrep
       unzip # for lsp-zero
+      python39 pyright
     ];
 
     programs.neovim = {
