@@ -24,7 +24,7 @@ in
       rustc cargo rust-analyzer gcc # Rust
       ripgrep
       unzip # for lsp-zero
-      python39 pyright
+      python39 pyright #python
     ];
 
     programs.neovim = {
@@ -68,7 +68,7 @@ in
                 -- to learn the available actions
                 lsp.default_keymaps({buffer = bufnr})
             end)
-            lsp.setup_servers({'lua_ls', 'rnix', 'rust_analyzer'})
+            lsp.setup_servers({'lua_ls', 'rnix', 'rust_analyzer', 'pyright'})
             -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
             lsp.setup()
