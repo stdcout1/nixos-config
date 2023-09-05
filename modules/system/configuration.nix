@@ -91,7 +91,7 @@
 
   # make lidclose suspend then hibernate to save battery
 
-  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.lidSwitch = "hibernate";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nasir = {

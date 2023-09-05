@@ -18,6 +18,7 @@ in {
                   ublock-origin
                   gruvbox-dark-theme
                   darkreader
+                  proton-pass
                 ];
                 # userChome.css to make it look better
                 userChrome = ''
