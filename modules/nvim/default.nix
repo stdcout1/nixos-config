@@ -68,7 +68,7 @@ in
                 -- to learn the available actions
                 lsp.default_keymaps({buffer = bufnr})
             end)
-            lsp.setup_servers({'lua_ls', 'rnix', 'rust_analyzer', 'pyright'})
+            lsp.setup_servers({'lua_ls', 'rnix', 'pyright'})
             -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
             lsp.setup()
@@ -76,6 +76,14 @@ in
             cmp.setup({
                 mapping = {
                     ['<CR>'] = cmp.mapping.confirm({select = false}),
+                }
+            })
+            local rust_tools = require('rust-tools')
+            rust_tools.setup({
+                server = {
+                    on_attach = function(_, bufnr)
+                        vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
+                    end
                 }
             })
             EOF
