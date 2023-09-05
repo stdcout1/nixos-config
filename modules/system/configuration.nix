@@ -111,7 +111,6 @@
     swayidle
     playerctl
     jq
-    git
     greetd.tuigreet
   ];
 

@@ -21,7 +21,7 @@ in
     home.packages = with pkgs; [
       rnix-lsp nixfmt # Nix
       lua-language-server stylua # Lua
-      rustc cargo rust-analyzer gcc rust-tools-nvim # Rust
+      rustc cargo rust-analyzer gcc # Rust
       ripgrep
       unzip # for lsp-zero
       python39 pyright #python
@@ -37,6 +37,7 @@ in
         nvim-lspconfig
         nvim-cmp
         cmp-nvim-lsp
+        rust-tools-nvim
         luasnip
         {
           plugin = gruvbox;
@@ -69,6 +70,7 @@ in
                 lsp.default_keymaps({buffer = bufnr})
             end)
             lsp.setup_servers({'lua_ls', 'rnix', 'pyright'})
+            lsp.skip_server_setup({'rust_analyzer'})
             -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
             lsp.setup()
@@ -82,7 +84,8 @@ in
             rust_tools.setup({
                 server = {
                     on_attach = function(_, bufnr)
-                        vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
+                        rust_tools.inlay_hints.set()
+                        vim.keymap.set('n', '<leader>a', rust_tools.code_action_group.code_action_group, {buffer = bufnr})
                     end
                 }
             })
