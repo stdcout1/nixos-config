@@ -21,7 +21,7 @@ in
     home.packages = with pkgs; [
       rnix-lsp nixfmt # Nix
       lua-language-server stylua # Lua
-      rustc cargo rust-analyzer gcc # Rust
+      rustc cargo rust-analyzer gcc rust-tools# Rust
       ripgrep
       unzip # for lsp-zero
       python39 pyright #python
