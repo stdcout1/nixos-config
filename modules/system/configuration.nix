@@ -110,7 +110,6 @@
     swaylock-effects
     swayidle
     playerctl
-    neofetch
     jq
     git
     greetd.tuigreet
