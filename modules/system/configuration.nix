@@ -49,6 +49,8 @@
   programs.light.enable = true;
   
   security.pam.services.swaylock = {};
+
+  services.gnome.gnome-keyring.enable = true; #for git auth
   
   services.greetd = {
     enable = true;

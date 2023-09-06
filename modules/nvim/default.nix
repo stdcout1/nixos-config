@@ -17,7 +17,11 @@ in
   config = mkIf cfg.enable {
 
     home.file.".config/nvim/settings.lua".source = ./init.lua;
-
+    # plugin specific lua config
+    home.file.".config/nvim/remaps" = {
+      source = ./remaps;
+      recursive = true;
+    };
     home.packages = with pkgs; [
       rnix-lsp nixfmt # Nix
       lua-language-server stylua # Lua
@@ -35,10 +39,11 @@ in
         #dependencies
         plenary-nvim
         nvim-lspconfig
-        nvim-cmp
         cmp-nvim-lsp
         rust-tools-nvim
+        crates-nvim 
         luasnip
+        cmp-path cmp-buffer nvim-cmp #sources
         {
           plugin = gruvbox;
           config = "colorscheme gruvbox";
@@ -76,6 +81,12 @@ in
             lsp.setup()
             local cmp = require('cmp')
             cmp.setup({
+                sources = {
+                    { name = "path" },
+                    { name = "buffer" },
+                    { name = "nvim_lsp" },
+                    { name = "crates" },
+                },
                 mapping = {
                     ['<CR>'] = cmp.mapping.confirm({select = false}),
                 }
