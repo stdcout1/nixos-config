@@ -1,4 +1,3 @@
-require("remaps")
 local o = vim.opt
 local g = vim.g
 vim.cmd [[
@@ -79,4 +78,3 @@ o.laststatus = 3
 o.pumheight = 6
 o.splitright = true
 o.splitbelow = true
-o.completeopt = "menuone,noselect"

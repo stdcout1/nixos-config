@@ -23,12 +23,13 @@ in
       recursive = true;
     };
     home.packages = with pkgs; [
-      rnix-lsp nixfmt # Nix
+      nil nixfmt # Nix
       lua-language-server stylua # Lua
       rustc cargo rust-analyzer gcc # Rust
       ripgrep
       unzip # for lsp-zero
       python39 pyright #python
+      nodejs
     ];
 
     programs.neovim = {
@@ -43,7 +44,7 @@ in
         rust-tools-nvim
         crates-nvim 
         luasnip
-        cmp-path cmp-buffer nvim-cmp #sources
+        vim-be-good
         {
           plugin = gruvbox;
           config = "colorscheme gruvbox";
@@ -65,56 +66,39 @@ in
           config = "lua require('indent_blankline').setup()";
         }
         {
+            plugin = comment-nvim;
+            config = "lua require('Comment').setup()";
+        }
+        cmp-path cmp-buffer nvim-cmp copilot-cmp #sources for nvim-cmp
+        { 
           plugin = nvim-lsp-zero;
-          config = ''
-            lua << EOF
-            local lsp = require('lsp-zero').preset("recommended")
-            lsp.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
-                lsp.default_keymaps({buffer = bufnr})
-            end)
-            lsp.setup_servers({'lua_ls', 'rnix', 'pyright'})
-            lsp.skip_server_setup({'rust_analyzer'})
-            -- (Optional) Configure lua language server for neovim
-            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-            lsp.setup()
-            local cmp = require('cmp')
-            cmp.setup({
-                sources = {
-                    { name = "path" },
-                    { name = "buffer" },
-                    { name = "nvim_lsp" },
-                    { name = "crates" },
-                },
-                mapping = {
-                    ['<CR>'] = cmp.mapping.confirm({select = false}),
-                }
-            })
-            local rust_tools = require('rust-tools')
-            rust_tools.setup({
-                server = {
-                    on_attach = function(_, bufnr)
-                        rust_tools.inlay_hints.set()
-                        vim.keymap.set('n', '<leader>a', rust_tools.code_action_group.code_action_group, {buffer = bufnr})
-                    end
-                }
-            })
-            EOF
-          '';
+          type = "lua";
+          config = builtins.readFile(./remaps/lsp-zero.lua);
         }
         {
           plugin = nvim-treesitter;
-          config = ''
-            lua << EOF
-            require('nvim-treesitter.configs').setup {
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                },
-            }
-            EOF
-          '';
+          type = "lua";
+          config = builtins.readFile(./remaps/treesitter.lua);
+        }
+        {
+          plugin = crates-nvim;
+          type = "lua";
+          config = builtins.readFile(./remaps/crates.lua);
+        }
+        {
+          plugin = copilot-lua;
+          type = "lua";
+          config = builtins.readFile(./remaps/copilot.lua);
+        }
+        {
+            plugin = nvim-surround;
+            type = "lua";
+            config = "require('nvim-surround').setup({})";
+        }
+        {
+            plugin = nvim-autopairs;
+            type = "lua";
+            config = "require('nvim-autopairs').setup {}";
         }
       ];
 
