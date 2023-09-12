@@ -11,7 +11,7 @@
     waybar.enable = true;
     foot.enable = true;
     fish.enable = true;
-    zellij.enable = true;
+    tmux.enable = true;
     starship.enable = true;
     lf.enable = true;
     scripts.enable = true;
@@ -22,5 +22,6 @@
     zathura.enable = true;
     nvim.enable = true;
     git.enable = true;
+    stremio.enable = true;
   };
 }

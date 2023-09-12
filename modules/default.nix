@@ -13,7 +13,7 @@
     ./foot
     ./fish
     ./starship
-    ./zellij
+    ./tmux
     ./lf
     ./xdg
     ./scripts
@@ -23,6 +23,7 @@
     ./zathura
     ./nvim
     ./git
+    ./stremio
     # cli
 
   ];

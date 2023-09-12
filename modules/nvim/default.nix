@@ -43,7 +43,6 @@ in
         cmp-nvim-lsp
         rust-tools-nvim
         crates-nvim 
-        luasnip
         vim-be-good
         {
           plugin = gruvbox;
@@ -69,7 +68,7 @@ in
             plugin = comment-nvim;
             config = "lua require('Comment').setup()";
         }
-        cmp-path cmp-buffer nvim-cmp copilot-cmp #sources for nvim-cmp
+        cmp-path cmp-buffer nvim-cmp copilot-cmp luasnip cmp_luasnip friendly-snippets #sources for nvim-cmp
         { 
           plugin = nvim-lsp-zero;
           type = "lua";
@@ -99,6 +98,11 @@ in
             plugin = nvim-autopairs;
             type = "lua";
             config = "require('nvim-autopairs').setup {}";
+        }
+        {
+            plugin = hop-nvim;
+            type = "lua";
+            config = builtins.readFile(./remaps/hop.lua);
         }
       ];
 
