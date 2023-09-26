@@ -19,12 +19,12 @@ local opts = { silent = true, noremap = true }
 g.mapleader = ' '
 
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 map('n', '<leader>pg', ':Telescope live_grep <CR>', opts)
+map("t", "<Esc>", "<C-\\><C-n>", opts)
 map('n', '<leader>pf', ':Telescope find_files <CR>', opts)
 map('n', '<C-p>', ':Telescope git_files <CR>', opts)
 map('n', 'j', 'gj', opts)

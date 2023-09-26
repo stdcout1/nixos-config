@@ -25,7 +25,7 @@ in
     home.packages = with pkgs; [
       nil nixfmt # Nix
       lua-language-server stylua # Lua
-      rustc cargo rust-analyzer gcc # Rust
+      rustc cargo rust-analyzer gcc rustfmt # Rust
       ripgrep
       unzip # for lsp-zero
       python39 pyright #python
@@ -75,7 +75,7 @@ in
           config = builtins.readFile(./remaps/lsp-zero.lua);
         }
         {
-          plugin = nvim-treesitter;
+          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml ]);
           type = "lua";
           config = builtins.readFile(./remaps/treesitter.lua);
         }
@@ -103,6 +103,21 @@ in
             plugin = hop-nvim;
             type = "lua";
             config = builtins.readFile(./remaps/hop.lua);
+        }
+        {
+            plugin = harpoon;
+            type = "lua";
+            config = builtins.readFile(./remaps/harpoon.lua);
+        }
+        {
+            plugin = undotree;
+            type = "lua";
+            config = builtins.readFile(./remaps/undotree.lua);
+        }
+        {
+            plugin = vim-fugitive;
+            type = "lua";
+            config = builtins.readFile(./remaps/vim-fugitive.lua);
         }
       ];
 
