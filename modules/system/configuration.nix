@@ -5,7 +5,7 @@
 { config, pkgs, lib,... }:
 
 {
-  # Use the systemd-boot EFI boot loader.
+    # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -37,9 +37,6 @@
   # Other programs
 
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-   	"spotify"
-  ];
 
   environment.variables = {
     NIXOS_CONFIG = "$HOME/.config/nixos/configuration.nix";
@@ -86,17 +83,6 @@
   
   programs.fish.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.clickMethod = "clickfinger";
-  services.xserver.libinput.touchpad.tapping = false;
-
-  # make lidclose suspend then hibernate to save battery
-
-  services.logind.lidSwitch = "hibernate";
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

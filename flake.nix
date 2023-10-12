@@ -39,11 +39,8 @@
                     system = system;
                     modules = [
                         { networking.hostName = hostname; }
-
-			hardware.nixosModules.framework-12th-gen-intel
-
                         # General configuration (users, networking, sound, etc)
-                        ./modules/system/configuration.nix
+                       ./modules/system/configuration.nix
                         # Hardware config (bootloader, kernel modules, filesystems, etc)
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")
                         home-manager.nixosModules.home-manager
@@ -62,7 +59,7 @@
                                 #(import ./overlays)
                             ];
                         }
-                    ];
+                    ] ++ (if hostname == "laptop" then hardware.nixosModules.framework-12th-gen-intel else []);
                     specialArgs = { inherit inputs; };
                 };
 
@@ -71,6 +68,7 @@
                 # Now, defining a new system is can be done in one line
                 #                                Architecture   Hostname
                 laptop = mkSystem inputs.nixpkgs "x86_64-linux" "laptop";
+                desktop  = mkSystem inputs.nixpkgs "x86_64-linux" "desktop";
             };
 
   };

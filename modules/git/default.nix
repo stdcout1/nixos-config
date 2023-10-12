@@ -10,6 +10,8 @@ in
     ];
     programs.git = {
       enable = true;
+      userName = "nasir";
+      userEmail = "nasirkhimani@gmail.com";
       extraConfig = {
         credential.helper = "${
           pkgs.git.override { withLibsecret = true; }
