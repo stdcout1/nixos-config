@@ -58,8 +58,10 @@ in
         }
         {
           plugin = telescope-nvim;
-          config = "lua require('telescope').setup()";
+          type = "lua";
+          config = builtins.readFile(./remaps/telescope.lua);
         }
+         
         {
           plugin = indent-blankline-nvim;
           config = "lua require('indent_blankline').setup()";
@@ -68,14 +70,14 @@ in
             plugin = comment-nvim;
             config = "lua require('Comment').setup()";
         }
-        cmp-path cmp-buffer nvim-cmp copilot-cmp luasnip cmp_luasnip friendly-snippets #sources for nvim-cmp
+        cmp-path cmp-buffer nvim-cmp luasnip cmp_luasnip friendly-snippets #sources for nvim-cmp
         { 
           plugin = nvim-lsp-zero;
           type = "lua";
           config = builtins.readFile(./remaps/lsp-zero.lua);
         }
         {
-          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml ]);
+          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix ]);
           type = "lua";
           config = builtins.readFile(./remaps/treesitter.lua);
         }
