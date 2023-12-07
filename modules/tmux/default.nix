@@ -10,6 +10,9 @@ in {
         enable = true;
         prefix = "C-Space";
         keyMode = "vi";
+        extraConfig = ''
+        set -g mouse on
+        '';
       };
     };
 }

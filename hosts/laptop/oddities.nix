@@ -2,7 +2,6 @@
 { config, pkgs, lib, hardware, ... }:
 
 {
-  hardware.nixosModules.framework-12th-gen-intel;
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.clickMethod = "clickfinger";

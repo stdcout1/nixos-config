@@ -59,7 +59,7 @@
                                 #(import ./overlays)
                             ];
                         }
-                    ] ++ (if hostname == "laptop" then hardware.nixosModules.framework-12th-gen-intel else []);
+                    ] ++ (if hostname == "laptop" then [hardware.nixosModules.framework-12th-gen-intel] else []);
                     specialArgs = { inherit inputs; };
                 };
 
