@@ -23,5 +23,6 @@
     nvim.enable = true;
     git.enable = true;
     stremio.enable = true;
+    rmapi.enable = true;
   };
 }
