@@ -25,6 +25,7 @@
     ./git
     ./stremio
     # cli
+    ./rmapi
 
   ];
 }

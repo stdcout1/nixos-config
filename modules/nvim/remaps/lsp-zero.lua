@@ -28,7 +28,10 @@ end)
 lsp.setup_servers({
     'lua_ls',
     'nil_ls',
-    'pyright'
+    'pyright',
+    'clangd',
+    'tsserver'
+
 })
 
 -- (Optional) Configure lua language server for neovim

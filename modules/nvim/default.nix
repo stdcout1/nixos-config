@@ -25,11 +25,12 @@ in
     home.packages = with pkgs; [
       nil nixfmt # Nix
       lua-language-server stylua # Lua
-      rustc cargo rust-analyzer gcc rustfmt # Rust
+      rustc cargo rust-analyzer gcc rustfmt # Rust and gcc
       ripgrep
       unzip # for lsp-zero
       python39 pyright #python
-      nodejs
+      clang-tools #c and cpp
+      nodePackages.typescript-language-server nodejs #web dev
     ];
 
     programs.neovim = {
@@ -77,7 +78,7 @@ in
           config = builtins.readFile(./remaps/lsp-zero.lua);
         }
         {
-          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix ]);
+          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix p.c p.cpp p.javascript p.typescript ]);
           type = "lua";
           config = builtins.readFile(./remaps/treesitter.lua);
         }
