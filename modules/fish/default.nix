@@ -70,10 +70,12 @@ in {
           svi = "sudo nvim";
           svim = "sudo nvim";
 
-	  lsa = "exa -lag --git --icons --sort=type";
+        lsa = "exa -lag --git --icons --sort=type";
           l = "exa -lag --git --icons --sort=type";
           ll = "exa -l --git --icons --sort=type";
           la = "exa -lag --git --icons --sort=type";
+          rw = "swww img $(ls $NIXOS_CONFIG_DIRpics | shuf -n 1)";
+
 
       };
 
