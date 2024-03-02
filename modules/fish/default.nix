@@ -9,7 +9,7 @@ in {
 
       home.packages = with pkgs; [
         bat
-        exa
+        eza
         fd
         fzf
         fish

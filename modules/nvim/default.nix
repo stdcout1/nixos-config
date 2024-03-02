@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.nvim;
-  nvim-lsp-zero = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  nvim-lsp-zero = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-lsp-zero";
     src = pkgs.fetchFromGitHub {
       owner = "VonHeikemen";
@@ -65,7 +65,7 @@ in
          
         {
           plugin = indent-blankline-nvim;
-          config = "lua require('indent_blankline').setup()";
+          config = "lua require('ibl').setup()";
         }
         {
             plugin = comment-nvim;
