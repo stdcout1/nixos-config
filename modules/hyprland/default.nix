@@ -12,7 +12,7 @@ in {
     ];
     wayland.windowManager.hyprland = {
 	enable = true;
-	systemdIntegration = true;
+	systemd.enable = true;
 	extraConfig = builtins.readFile ./hyprland.conf;
     };
     #home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;

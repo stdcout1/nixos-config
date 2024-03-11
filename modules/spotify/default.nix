@@ -4,9 +4,9 @@ let
     cfg = config.modules.spotify;
     spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
     gruvboxy = pkgs.fetchgit {
-    	url = "https://github.com/shvedes/Gruvboxy";
-	rev = "c0faf4913e0070d62fb4a12ef7006a99302c3eb5";
-	sha256 = "sha256-6WKRcSuJna4ipfaoqOHnEm6Hf/VJFcdHR0jD5lvhJgY=";
+    	url = "https://github.com/shvedes/spicetify-gruvbox";
+	rev = "c285458ca1a8b95cc590d82779ca4b86e815f04e";
+	sha256 = "sha256-wO+9jg5oFIpOBG5LucJE0HVsKt7qrj1Awc3IzA6sMNg=";
     };
 in {
     options.modules.spotify = { enable = mkEnableOption "spotify"; };

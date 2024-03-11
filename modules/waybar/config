@@ -10,7 +10,7 @@
     // Choose the order of the modules
     "modules-left": [ 
         "custom/border_left",
-        "wlr/workspaces", 
+        "hyprland/workspaces", 
         "pulseaudio",
 	"backlight",
         "custom/border_right"
@@ -32,7 +32,7 @@
     ],
     
     // Modules configuration
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon} {name}",
         "format-icons": {
           "active": "󰐾",

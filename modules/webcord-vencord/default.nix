@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, inputs, ... }:
 with lib;
 let cfg = config.modules.webcord-vencord;
 in {
@@ -6,7 +6,7 @@ in {
 
     config = mkIf cfg.enable {
     	home.packages = [
-	    pkgs.webcord-vencord
+            pkgs.vesktop
 	];
 	
 	home.file.".config/WebCord/Themes/gruvbox".source = ./gruvbox;

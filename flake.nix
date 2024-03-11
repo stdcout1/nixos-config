@@ -11,13 +11,11 @@
     # home manager
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpgs.follows = "nixpkgs";
     };
 
     # nur
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nikpkgs";
     };
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
@@ -27,9 +25,6 @@
 # taken from https://github.com/notusknot/dotfiles-nix/blob/main/flake.nix 
   outputs = { self, nixpkgs, nur, hardware, home-manager, ... }@inputs: 
      let
-            system = "x86_64-linux"; #current system
-            pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-            lib = nixpkgs.lib;
 
             # This lets us reuse the code to "create" a system
             # Credits go to sioodmy on this one!
