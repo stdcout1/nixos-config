@@ -9,6 +9,7 @@ in {
     config = mkIf cfg.enable {
         home.packages = with pkgs; [
             steam
+            lutris # basically wanted with steam
         ];
     };
 }

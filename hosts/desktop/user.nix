@@ -23,5 +23,7 @@
     nvim.enable = true;
     git.enable = true;
     stremio.enable = true;
+    steam.enable = true;
+    minecraft.enable = true;
   };
 }

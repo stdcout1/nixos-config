@@ -29,8 +29,8 @@
 
     #emulation
 
-    #steam
+    #gaming
     ./steam
-
+    ./minecraft
   ];
 }
