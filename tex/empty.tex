@@ -1,0 +1,52 @@
+\documentclass{article}% use option titlepage to get the title on a page of its own.
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+% FROM PROF'S TEX FILES
+% Define the orange color
+\definecolor{myorange}{RGB}{255,65,0}
+% Define a new color for "cherry" (dark red)
+\definecolor{cherry}{RGB}{148,0,25}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+% FROM PROF'S TEX FILES
+\lstset{
+	language=C,
+	basicstyle=\ttfamily,
+	backgroundcolor=\color{blue!5},
+	keywordstyle=\color{blue},
+	commentstyle=\color{codegreen},
+	stringstyle=\color{red},
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	rulecolor=\color{lightgray!35}, % Set the color of the frame
+	numbers=none,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	tabsize=1,
+    alsoletter={\#},
+	otherkeywords={\#}
+}
+% FROM PROF'S TEX FILES
+\newtcbox{\codebox}[1][gray]{on line, boxrule=0.2pt, colback=blue!5, colframe=#1, fontupper=\color{cherry}\ttfamily, arc=2pt, boxsep=0pt, left=2pt, right=2pt, top=3pt, bottom=2pt}
+
+
+\lstdefinestyle{BashOutputStyle}{
+  basicstyle=\ttfamily,
+  numbers=none,
+  frame=single,
+  columns=fullflexible,
+  backgroundcolor=\color{blue!5},
+}
+
+\begin{document}
+
+\title{Assignment 2}
+\author{Nasir Khimani}
+\maketitle
+
+\clearpage
+
+
+\end{document}
