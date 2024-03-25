@@ -16,7 +16,7 @@ in
         };
         colors = {
           #gruvbox theme
-          alpha = 0.5;
+          alpha = 0.8;
           foreground = "ebdbb2";
           background = "282828";
 

@@ -27,5 +27,10 @@
     # cli
     ./rmapi
 
+    #emulation
+
+    #gaming
+    ./steam
+    ./minecraft
   ];
 }

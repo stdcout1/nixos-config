@@ -2,6 +2,7 @@
 
 {
   imports = [ ../../modules/default.nix ];
+  config.desktop.enable = true;
   config.modules = {
     # gui
     firefox.enable = true;
@@ -23,5 +24,7 @@
     nvim.enable = true;
     git.enable = true;
     stremio.enable = true;
+    steam.enable = true;
+    minecraft.enable = true;
   };
 }
