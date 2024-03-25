@@ -35,6 +35,11 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp166s0.useDHCP = lib.mkDefault true;
 
+  # we will keep bluetooth since desktop may not have it...
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
