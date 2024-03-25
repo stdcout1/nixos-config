@@ -2,6 +2,7 @@
 
 {
   imports = [ ../../modules/default.nix ];
+  config.desktop.enable = true;
   config.modules = {
     # gui
     firefox.enable = true;
