@@ -27,6 +27,7 @@
         "network", 
         "battery", 
         "tray", 
+        "custom/adthan",
         "clock",
         "custom/border_right"
     ],
@@ -93,6 +94,13 @@
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous",
         "max-length": 60
+    },
+    "custom/adthan": {
+        "format": "{}",
+        "return-type": "json",
+        "tooltip": true,
+        "exec": "adthanpy",
+        "max-length": 30
     },
     "custom/launcher": {
         "format": "",

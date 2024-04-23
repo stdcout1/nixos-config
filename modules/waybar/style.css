@@ -135,6 +135,7 @@
 #custom-updates,
 #custom-notifications,
 #custom-power,
+#custom-adthan,
 #custom-weather {
     background-color: @mantle;
     color: @text;
