@@ -36,11 +36,8 @@
   programs.hyprland.xwayland.enable = true;
   # Other programs
 
-
-
   environment.variables = {
-    NIXOS_CONFIG = "$HOME/.config/nixos/configuration.nix";
-    NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
+    WALLPAPERDIR = "$HOME/flake/pics";
   };
 
   programs.light.enable = true;
@@ -99,10 +96,6 @@
     dunst
     libnotify
     wl-clipboard
-    wayvnc
-    rofi-power-menu
-    swaylock-effects
-    swayidle
     playerctl
     jq
     greetd.tuigreet

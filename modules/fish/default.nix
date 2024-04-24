@@ -74,7 +74,6 @@ in {
           l = "exa -lag --git --icons --sort=type";
           ll = "exa -l --git --icons --sort=type";
           la = "exa -lag --git --icons --sort=type";
-          rw = "swww img $(ls $NIXOS_CONFIG_DIRpics | shuf -n 1)";
 
 
       };

@@ -26,5 +26,6 @@
     stremio.enable = true;
     steam.enable = true;
     minecraft.enable = true;
+    hyprlock.enable = true;
   };
 }

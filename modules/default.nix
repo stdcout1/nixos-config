@@ -24,6 +24,7 @@
     ./nvim
     ./git
     ./stremio
+    ./hyprlock
     # cli
     ./rmapi
 
