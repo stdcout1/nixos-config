@@ -25,6 +25,7 @@
     ./git
     ./stremio
     ./hyprlock
+    ./hypridle
     # cli
     ./rmapi
 
