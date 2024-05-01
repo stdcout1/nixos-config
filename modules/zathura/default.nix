@@ -6,7 +6,7 @@ in {
 
     config = mkIf cfg.enable {
 
-xdg.mimeApps.defaultApplications = {
+    xdg.mimeApps.defaultApplications = {
     	pdf = {
 	    cmd = lib.getExe pkgs.zathura;
 	    desktop = "zathura";

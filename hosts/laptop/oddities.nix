@@ -9,13 +9,11 @@
 
   # make lidclose suspend then hibernate to save battery
 
-  services.logind.lidSwitch = "hibernate";
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
+  services.logind.lidSwitch = "suspend";
+  services.logind.powerKey = "ignore";
   
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-   	"spotify"
+    "spotify"
   ];
 
 }
