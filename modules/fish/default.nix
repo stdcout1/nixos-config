@@ -60,6 +60,8 @@ in {
             body = "mkdir -p $argv; cd $argv";
             description = "mkdir and cd into it";
           }; 
+          gitignore = "curl -sL https://www.gitignore.io/api/$argv";
+          lp = "exa --tree $(nix build nixpkgs#$argv --print-out-paths --no-link)";
         };
 
         shellAbbrs = {
