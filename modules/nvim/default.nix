@@ -23,14 +23,22 @@ in
       recursive = true;
     };
     home.packages = with pkgs; [
-      nil nixfmt # Nix
-      lua-language-server stylua # Lua
-      rustc cargo rust-analyzer gcc rustfmt # Rust and gcc
+      nil
+      nixpkgs-fmt # Nix
+      lua-language-server
+      stylua # Lua
+      rustc
+      cargo
+      rust-analyzer
+      gcc
+      rustfmt # Rust and gcc
       ripgrep
       unzip # for lsp-zero
-      python39 pyright #python
+      python39
+      pyright #python
       clang-tools #c and cpp
-      nodePackages.typescript-language-server nodejs #web dev
+      nodePackages.typescript-language-server
+      nodejs #web dev
     ];
 
     programs.neovim = {
@@ -43,7 +51,7 @@ in
         nvim-lspconfig
         cmp-nvim-lsp
         rust-tools-nvim
-        crates-nvim 
+        crates-nvim
         vim-be-good
         {
           plugin = gruvbox;
@@ -60,67 +68,72 @@ in
         {
           plugin = telescope-nvim;
           type = "lua";
-          config = builtins.readFile(./remaps/telescope.lua);
+          config = builtins.readFile (./remaps/telescope.lua);
         }
-         
+
         {
           plugin = indent-blankline-nvim;
           config = "lua require('ibl').setup()";
         }
         {
-            plugin = comment-nvim;
-            config = "lua require('Comment').setup()";
+          plugin = comment-nvim;
+          config = "lua require('Comment').setup()";
         }
-        cmp-path cmp-buffer nvim-cmp luasnip cmp_luasnip friendly-snippets #sources for nvim-cmp
-        { 
+        cmp-path
+        cmp-buffer
+        nvim-cmp
+        luasnip
+        cmp_luasnip
+        friendly-snippets #sources for nvim-cmp
+        {
           plugin = nvim-lsp-zero;
           type = "lua";
-          config = builtins.readFile(./remaps/lsp-zero.lua);
+          config = builtins.readFile (./remaps/lsp-zero.lua);
         }
         {
           plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix p.c p.cpp p.javascript p.typescript ]);
           type = "lua";
-          config = builtins.readFile(./remaps/treesitter.lua);
+          config = builtins.readFile (./remaps/treesitter.lua);
         }
         {
           plugin = crates-nvim;
           type = "lua";
-          config = builtins.readFile(./remaps/crates.lua);
+          config = builtins.readFile (./remaps/crates.lua);
         }
         {
           plugin = copilot-lua;
           type = "lua";
-          config = builtins.readFile(./remaps/copilot.lua);
+          config = builtins.readFile (./remaps/copilot.lua);
         }
         {
-            plugin = nvim-surround;
-            type = "lua";
-            config = "require('nvim-surround').setup({})";
+          plugin = nvim-surround;
+          type = "lua";
+          config = "require('nvim-surround').setup({})";
         }
         {
-            plugin = nvim-autopairs;
-            type = "lua";
-            config = "require('nvim-autopairs').setup {}";
+          plugin = nvim-autopairs;
+          type = "lua";
+          config = "require('nvim-autopairs').setup {}";
         }
         {
-            plugin = hop-nvim;
-            type = "lua";
-            config = builtins.readFile(./remaps/hop.lua);
+          plugin = hop-nvim;
+          type = "lua";
+          config = builtins.readFile (./remaps/hop.lua);
         }
         {
-            plugin = harpoon;
-            type = "lua";
-            config = builtins.readFile(./remaps/harpoon.lua);
+          plugin = harpoon;
+          type = "lua";
+          config = builtins.readFile (./remaps/harpoon.lua);
         }
         {
-            plugin = undotree;
-            type = "lua";
-            config = builtins.readFile(./remaps/undotree.lua);
+          plugin = undotree;
+          type = "lua";
+          config = builtins.readFile (./remaps/undotree.lua);
         }
         {
-            plugin = vim-fugitive;
-            type = "lua";
-            config = builtins.readFile(./remaps/vim-fugitive.lua);
+          plugin = vim-fugitive;
+          type = "lua";
+          config = builtins.readFile (./remaps/vim-fugitive.lua);
         }
       ];
 

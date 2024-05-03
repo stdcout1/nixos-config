@@ -20,6 +20,8 @@
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
+    hyprlock.url = "github:hyprwm/Hyprlock";
+
   };
 
 # taken from https://github.com/notusknot/dotfiles-nix/blob/main/flake.nix 

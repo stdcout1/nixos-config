@@ -99,7 +99,7 @@
         "format": "{}",
         "return-type": "json",
         "tooltip": true,
-        "exec": "adthanpy",
+        "exec": "adthanpy waybar",
         "max-length": 30
     },
     "custom/launcher": {
