@@ -6,6 +6,7 @@
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.clickMethod = "clickfinger";
   services.xserver.libinput.touchpad.tapping = false;
+  services.fprintd.enable = true;
 
   # make lidclose suspend then hibernate to save battery
 
