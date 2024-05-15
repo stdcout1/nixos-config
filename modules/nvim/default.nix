@@ -39,6 +39,10 @@ in
       clang-tools #c and cpp
       nodePackages.typescript-language-server
       nodejs #web dev
+      elmPackages.elm-language-server #elm
+      elmPackages.elm
+      elmPackages.elm-format
+      elmPackages.elm-live
     ];
 
     programs.neovim = {
@@ -91,7 +95,7 @@ in
           config = builtins.readFile (./remaps/lsp-zero.lua);
         }
         {
-          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix p.c p.cpp p.javascript p.typescript ]);
+          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix p.c p.cpp p.javascript p.typescript p.elm ]);
           type = "lua";
           config = builtins.readFile (./remaps/treesitter.lua);
         }

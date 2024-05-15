@@ -30,8 +30,8 @@ lsp.setup_servers({
     'nil_ls',
     'pyright',
     'clangd',
-    'tsserver'
-
+    'tsserver',
+    'elmls',
 })
 
 require('lspconfig').nil_ls.setup({
