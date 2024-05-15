@@ -27,6 +27,5 @@
     hyprlock.enable = true;
     hypridle.enable = true;
 
-    steam.enable = true;
   };
 }
