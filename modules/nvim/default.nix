@@ -57,6 +57,7 @@ in
         rust-tools-nvim
         crates-nvim
         vim-be-good
+        markdown-preview-nvim
         {
           plugin = gruvbox;
           config = "colorscheme gruvbox";
