@@ -20,7 +20,7 @@
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
-    hyprlock.url = "github:hyprwm/Hyprlock";
+
 
   };
 
@@ -56,7 +56,7 @@
                                 #(import ./overlays)
                             ];
                         }
-                    ] ++ (if hostname == "laptop" then [hardware.nixosModules.framework-12th-gen-intel] else []);
+                    ] ++ (if hostname == "laptop" then [hardware.nixosModules.framework-12th-gen-intel] else [hardware.nixosModules.common-gpu-intel-disable]);
                     specialArgs = { inherit inputs; };
                 };
 

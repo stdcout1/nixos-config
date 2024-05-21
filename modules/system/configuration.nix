@@ -31,9 +31,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  # Enable the Wayland Compositor
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
   # Other programs
 
   environment.variables = {
