@@ -8,8 +8,6 @@
   # Oddities for nvidia
   nixpkgs.config.allowUnfree = true;
   
-  # Needed for 555.42.02
-  programs.dconf.enable = true;
 
   services.logrotate.checkConfig = false;
   boot.kernelParams = [ "module_blacklist=i915" ]; # blacklist integrated gpu
