@@ -11,7 +11,7 @@ in
     programs.hyprlock = {
       enable = true;
       settings = {
-        backgrounds = [
+        background = [
           {
             path = ''~/flake/pics/rails.jpg'';
             blur_passes = 3;
@@ -25,7 +25,7 @@ in
           disable_loading_bar = true;
         };
 
-        input-fields = [
+        input-field = [
           {
             size.width = 250;
             size.height = 60;
@@ -39,20 +39,18 @@ in
             fade_on_empty = false;
             placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
             hide_input = false;
-            position.x = 0;
-            position.y = -120;
+            position = "0, -120";
             halign = "center";
             valign = "center";
           }
         ];
-        labels = [
+        label = [
           {
             text = ''cmd[update:1000] echo "$(date +"%-I:%M%p")"'';
             color = "rgba(255, 255, 255, 0.6)";
             font_size = 120;
             font_family = ''JetBrains Mono Nerd Font Mono ExtraBold'';
-            position.x = 0;
-            position.y = -300;
+            position = "0, -300";
             halign = "center";
             valign = "top";
           }
@@ -61,8 +59,7 @@ in
             color = "rgba(255, 255, 255, 0.6)";
             font_size = 25;
             font_family = "JetBrains Mono Nerd Font Mono";
-            position.x = 0;
-            position.y = -40;
+            position = "0, -40";
             halign = "center";
             valign = "center";
           }
@@ -71,8 +68,7 @@ in
             color = "rgba(255, 255, 255, 0.6)";
             font_size = 18;
             font_family = "JetBrainsMono";
-            position.x = 0;
-            position.y = 0;
+            position = "0, 0";
             halign = "center";
             valign = "bottom";
           }

@@ -11,6 +11,15 @@ let
       sha256 = "sha256-SvshWzbgLsY2+l32R6+zkXurlIqUeMbKNUzI5B1ygIA=";
     };
   };
+  gruvbox-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "gruvbox.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "ellisonleao";
+      repo = "gruvbox.nvim";
+      rev = "96a8ec336fb48a11cefbd57508888361431aac26";
+      sha256 = "sha256-BLhZGijGF03UFiyMJ66C1ZLDRqAo1C80ekHcBm1PGoY="; 
+  };
+ };
 in
 {
   options.modules.nvim = { enable = mkEnableOption "nvim"; };
@@ -59,7 +68,7 @@ in
         vim-be-good
         markdown-preview-nvim
         {
-          plugin = gruvbox;
+          plugin = gruvbox-nvim;
           config = "colorscheme gruvbox";
         }
         {
@@ -96,7 +105,7 @@ in
           config = builtins.readFile (./remaps/lsp-zero.lua);
         }
         {
-          plugin = nvim-treesitter.withPlugins (p: [ p.rust p.python p.nix p.comment p.toml p.lua p.json p.yaml p.nix p.c p.cpp p.javascript p.typescript p.elm ]);
+          plugin = nvim-treesitter.withAllGrammars;
           type = "lua";
           config = builtins.readFile (./remaps/treesitter.lua);
         }
