@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.theming;
-  gruvboxPlus = import ./gruvbox-plus.nix { inherit pkgs; };
+  # gruvboxPlus = import ./gruvbox-plus.nix { inherit pkgs; };
 in
 {
   options.modules.theming = { enable = mkEnableOption "theming"; };
@@ -39,7 +39,8 @@ in
     gtk.theme.package = pkgs.gruvbox-gtk-theme;
     gtk.theme.name = "Gruvbox-Dark-BL";
 
-    gtk.iconTheme.package = gruvboxPlus;
+    # gtk.iconTheme.package = gruvboxPlus;
+    gtk.iconTheme.package = pkgs.gruvbox-plus-icons;
     gtk.iconTheme.name = "GruvboxPlus";
 
   };
