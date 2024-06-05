@@ -69,6 +69,10 @@ in
       elmPackages.elm-format
       elmPackages.elm-live
 
+      # Elixir
+      elixir
+      lexical
+
     ];
 
     programs.neovim = {

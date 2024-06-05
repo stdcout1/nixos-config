@@ -32,6 +32,7 @@ lsp.setup_servers({
     'clangd',
     'tsserver',
     'elmls',
+    'lexical',
 })
 
 require('lspconfig').nil_ls.setup({
