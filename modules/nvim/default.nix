@@ -17,9 +17,9 @@ let
       owner = "ellisonleao";
       repo = "gruvbox.nvim";
       rev = "96a8ec336fb48a11cefbd57508888361431aac26";
-      sha256 = "sha256-BLhZGijGF03UFiyMJ66C1ZLDRqAo1C80ekHcBm1PGoY="; 
+      sha256 = "sha256-BLhZGijGF03UFiyMJ66C1ZLDRqAo1C80ekHcBm1PGoY=";
+    };
   };
- };
 in
 {
   options.modules.nvim = { enable = mkEnableOption "nvim"; };
@@ -32,26 +32,43 @@ in
       recursive = true;
     };
     home.packages = with pkgs; [
+
+      # Nix
       nil
-      nixpkgs-fmt # Nix
+      nixpkgs-fmt 
+
+      # Lua
       lua-language-server
-      stylua # Lua
+      stylua
+
+      # Rust + gcc
       rustc
       cargo
       rust-analyzer
       gcc
-      rustfmt # Rust and gcc
+      rustfmt
+
+      # for lsp-zero
       ripgrep
-      unzip # for lsp-zero
+      unzip
+
+      # Python
       python39
-      pyright #python
+      pyright
+
+      # C and cpp
       clang-tools #c and cpp
+
+      # Web dev
       nodePackages.typescript-language-server
-      nodejs #web dev
-      elmPackages.elm-language-server #elm
+      nodejs
+
+      # Elm
+      elmPackages.elm-language-server
       elmPackages.elm
       elmPackages.elm-format
       elmPackages.elm-live
+
     ];
 
     programs.neovim = {
