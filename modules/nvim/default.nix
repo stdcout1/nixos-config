@@ -35,7 +35,7 @@ in
 
       # Nix
       nil
-      nixpkgs-fmt 
+      nixpkgs-fmt
 
       # Lua
       lua-language-server
@@ -71,7 +71,7 @@ in
 
       # Elixir
       elixir
-      lexical
+      elixir-ls
 
     ];
 

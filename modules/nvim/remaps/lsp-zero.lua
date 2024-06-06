@@ -32,10 +32,10 @@ lsp.setup_servers({
     'clangd',
     'tsserver',
     'elmls',
-    'lexical',
+    'elixirls',
 })
 
-require('lspconfig').nil_ls.setup({
+require("lspconfig").nil_ls.setup({
     settings = {
         ['nil'] = {
             formatting = {
@@ -43,6 +43,9 @@ require('lspconfig').nil_ls.setup({
             },
         }
     }
+})
+require("lspconfig").elixirls.setup({
+    cmd = {"elixir-ls"}
 })
 lsp.skip_server_setup({ 'rust_analyzer' })
 lsp.setup()
