@@ -21,7 +21,6 @@
     ./spotify
     ./theming
     ./zathura
-    ./nvim
     ./git
     ./stremio
     ./hyprlock
@@ -34,5 +33,9 @@
     #gaming
     ./steam
     ./minecraft
+
+    #programming
+    ./jetbrains
+    ./nvim
   ];
 }

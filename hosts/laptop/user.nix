@@ -26,6 +26,7 @@
     rmapi.enable = true;
     hyprlock.enable = true;
     hypridle.enable = true;
+    jetbrains.idea-ultimate.enable = true;
 
   };
 }

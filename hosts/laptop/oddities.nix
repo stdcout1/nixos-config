@@ -17,6 +17,7 @@
     "spotify"
     "steam"
     "steam-original"
+    "idea-ultimate"
   ];
 
 }
