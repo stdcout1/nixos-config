@@ -62,6 +62,7 @@ in
       # Web dev
       nodePackages.typescript-language-server
       nodejs
+      nodePackages.tailwindcss
 
       # Elm
       elmPackages.elm-language-server
