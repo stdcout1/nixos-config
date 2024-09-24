@@ -66,7 +66,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -114,7 +113,10 @@
   nix = {
     settings.allowed-users = [ "nasir" ];
     package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
+    extraOptions = ''
+      experimental-features = nix-command flakes 
+      trusted-users = root nasir
+    '';
   };
 
   # Some programs need SUID wrappers, can be configured further or are
