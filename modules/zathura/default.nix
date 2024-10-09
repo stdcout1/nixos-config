@@ -2,18 +2,21 @@
 with lib;
 let cfg = config.modules.zathura;
 in {
-    options.modules.zathura = { enable = mkEnableOption "zathura"; }; 
+  options.modules.zathura = { enable = mkEnableOption "zathura"; };
 
-    config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
     xdg.mimeApps.defaultApplications = {
-    	pdf = {
-	    cmd = lib.getExe pkgs.zathura;
-	    desktop = "zathura";
-	};
+      pdf = {
+        cmd = lib.getExe pkgs.zathura;
+        desktop = "zathura";
+      };
     };
-    	programs.zathura = {
-	    enable = true;
-	};
+    programs.zathura = {
+      enable = true;
+      options = {
+        "selection-clipboard" =  "clipboard";
+      };
     };
+  };
 }
