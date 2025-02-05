@@ -107,7 +107,7 @@
     noto-fonts
     fira-code
     font-awesome
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
   ];
 
   nix = {
