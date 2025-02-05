@@ -19,11 +19,9 @@ in
 
     gtk.enable = true;
 
-    qt.platformTheme.name = "gtk";
 
     qt.style.name = "adwaita-dark";
 
-    qt.style.package = pkgs.adwaita-qt;
 
     gtk.cursorTheme.package = pkgs.simp1e-cursors;
     gtk.cursorTheme.name = "Simp1e-Gruvbox-Dark";
@@ -37,7 +35,7 @@ in
     };
 
     gtk.theme.package = pkgs.gruvbox-gtk-theme;
-    gtk.theme.name = "Gruvbox-Dark-BL";
+    gtk.theme.name = "Gruvbox-Dark";
 
     # gtk.iconTheme.package = gruvboxPlus;
     gtk.iconTheme.package = pkgs.gruvbox-plus-icons;

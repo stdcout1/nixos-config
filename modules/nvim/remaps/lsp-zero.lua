@@ -29,8 +29,9 @@ lsp.setup_servers({
     'lua_ls',
     'nil_ls',
     'pyright',
+    'ruff',
     'clangd',
-    'tsserver',
+    'ts_ls',
     'elmls',
     'elixirls',
 })

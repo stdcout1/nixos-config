@@ -12,11 +12,17 @@
 
   services.logind.lidSwitch = "suspend";
   services.logind.powerKey = "ignore";
+
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+  };
   
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
     "steam"
     "steam-original"
+    "steam-unwrapped"
     "idea-ultimate"
   ];
 

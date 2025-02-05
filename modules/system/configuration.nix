@@ -112,7 +112,7 @@
 
   nix = {
     settings.allowed-users = [ "nasir" ];
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes 
       trusted-users = root nasir

@@ -55,6 +55,7 @@ in
       # Python
       python39
       pyright
+      ruff
 
       # C and cpp
       clang-tools #c and cpp
