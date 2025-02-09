@@ -9,7 +9,6 @@ in {
             pkgs.vesktop
 	];
 	
-	home.file.".config/vesktop/themes/gruvbox.theme.css".source = ./gruvbox.css;
 
     };
 }
