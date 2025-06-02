@@ -84,7 +84,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nasir = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "power" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "video" "power" "audio" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
   # List packages installed in system profile. To search, run:
