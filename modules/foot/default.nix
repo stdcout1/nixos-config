@@ -11,7 +11,7 @@ in
       enable = true;
       settings = {
         main = {
-          font = "JetBrainsMono Nerdfont:size=11:line-height=16px";
+          font = "JetBrainsMono Nerd Font:size=11";
           pad = "12x12";
         };
         colors = {
