@@ -14,7 +14,7 @@
   services.logind.powerKey = "ignore";
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
   
@@ -24,6 +24,8 @@
     "steam-original"
     "steam-unwrapped"
     "idea-ultimate"
+    "stremio-shell"
+    "stremio-server"
   ];
 
 }

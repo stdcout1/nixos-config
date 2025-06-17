@@ -5,8 +5,8 @@ let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   gruvboxy = pkgs.fetchgit {
     url = "https://github.com/Skaytacium/Gruvify";
-    rev = "24c03816d4954eacd082df93c9a86cfcc54a431b";
-    sha256 = "sha256-ShRdaXE504OhA4m7HiUXlXSbCZj/Hcalgal+NQ6kZb8=";
+    rev = "8590028db983bed7d3e93b48d46af58291929025";
+    sha256 = "sha256-UCJWMLcxZ5dT7KZtVaDswtN3MFM+zFylibF+bDE2qiE=";
   };
 in
 {
@@ -28,7 +28,7 @@ in
           overwriteAssets = false;
           sidebarConfig = false;
         };
-        colorScheme = "dark";
+        colorScheme = "Gruvbox";
 
         enabledExtensions = with spicePkgs.extensions; [
           fullAppDisplay
