@@ -65,7 +65,7 @@ in
             valign = "center";
           }
           {
-            text = ''In progress...'';
+            text = ''cmd[update:1000] adthand next -r'';
             color = "rgba(255, 255, 255, 0.6)";
             font_size = 18;
             font_family = "JetBrainsMono";

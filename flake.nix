@@ -23,6 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    adthand = {
+        url = "github:stdcout1/adthand";
+    };
+
 
   };
 

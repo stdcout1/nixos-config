@@ -60,7 +60,7 @@
     # package = config.boot.kernelPackages.nvidiaPackages.production;
 
     # Special config to load the latest (535 or 550) driver for the support of the 4070 SUPER
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 }
 
