@@ -53,7 +53,7 @@ in
       unzip
 
       # Python
-      python39
+      python314
       pyright
       ruff
 
