@@ -23,7 +23,7 @@ in
           ];
 
           modules-left = [ "custom/logo" "hyprland/workspaces" ];
-          modules-right = [ "custom/adthand" "network" "clock" "battery" ];
+          modules-right = [ "custom/adthand" "network" "clock" "pulseaudio" "battery" ];
 
           "custom/logo" = {
             format = "";
@@ -37,6 +37,11 @@ in
             exec = "adthand waybar";
             interval = 60;
             max-length = 30;
+          };
+          "pulseaudio" = {
+            format = "{volume}%";
+            format-muted = "mute";
+            on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           };
 
           "hyprland/workspaces" = {
@@ -54,6 +59,7 @@ in
 
           "network" = {
             format = "{essid}";
+            format-disconnected = "Disconnected";
           };
         };
       };
@@ -103,6 +109,19 @@ in
         #battery {
           margin-left: 7px;
           margin-right: 3px;
+          color: #ffffff
+        }
+        #battery.charging {
+            color: #97cf8a
+        }
+
+        #pulseaudio {
+            margin-left: 7px;
+            color: #ffffff
+        }
+
+        #pulseaudio.bluetooth {
+            color: #1c63cc
         }
       '';
     };

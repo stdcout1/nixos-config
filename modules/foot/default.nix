@@ -12,7 +12,6 @@ in
       settings = {
         main = {
           font = "JetBrainsMono Nerd Font:size=11";
-          pad = "12x12";
         };
         colors = {
           #gruvbox theme
