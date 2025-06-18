@@ -16,7 +16,7 @@ in {
                 isDefault = true;
                 extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
                   ublock-origin
-                  nicothin-space
+                  gruvbox-dark-theme
                   darkreader
                   proton-pass
                 ];

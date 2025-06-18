@@ -13,8 +13,9 @@ in
         main = {
           font = "JetBrainsMono Nerd Font:size=11";
         };
+        cursor.color = "dcdfe4 a3b3cc";
         colors = {
-          cursor = "dcdfe4";
+          # cursor = "dcdfe4";
           foreground = "dcdfe4";
           background = "000000"; # emo black
 
