@@ -50,7 +50,7 @@ in
 
           "clock" = {
             interval = 60;
-            format = "{:%a %d/%m %I:%M}";
+            format = "{:%a %m/%d %I:%M}";
           };
 
           "battery" = {
@@ -73,7 +73,7 @@ in
         }
 
         window#waybar {
-          background: #292828;
+          background: #000000;
           color: #ffffff;
         }
   

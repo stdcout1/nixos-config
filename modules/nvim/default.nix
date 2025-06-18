@@ -87,12 +87,18 @@ in
         nvim-lspconfig
         cmp-nvim-lsp
         rust-tools-nvim
-        crates-nvim
-        vim-be-good
         markdown-preview-nvim
         {
-          plugin = gruvbox-nvim;
-          config = "colorscheme gruvbox";
+          plugin = onehalf;
+          config = ''
+            set background=dark
+            colorscheme onehalfdark
+            hi Normal guibg=NONE ctermbg=NONE
+            hi LineNr guibg=NONE ctermbg=NONE
+            hi SignColumn guibg=NONE ctermbg=NONE
+            hi EndOfBuffer guibg=NONE ctermbg=NONE
+            hi Visual cterm=none ctermbg=darkgrey ctermfg=white
+          '';
         }
         {
           plugin = impatient-nvim;

@@ -14,28 +14,32 @@ in
           font = "JetBrainsMono Nerd Font:size=11";
         };
         colors = {
-          #gruvbox theme
-          alpha = 0.8;
-          foreground = "ebdbb2";
-          background = "282828";
+          cursor = "dcdfe4";
+          foreground = "dcdfe4";
+          background = "000000"; # emo black
 
-          regular0 = "282828";
-          regular1 = "cc241d";
-          regular2 = "98971a";
-          regular3 = "d79921";
-          regular4 = "458588";
-          regular5 = "b16286";
-          regular6 = "689d6a";
-          regular7 = "a89984";
+          regular0 = "282c34"; # dark grayish black
+          regular1 = "e06c75"; # red
+          regular2 = "98c379"; # green
+          regular3 = "e5c07b"; # yellow
+          regular4 = "61afef"; # blue
+          regular5 = "c678dd"; # magenta
+          regular6 = "56b6c2"; # cyan
+          regular7 = "dcdfe4"; # white (light gray)
 
-          bright0 = "928374";
-          bright1 = "fb4934";
-          bright2 = "b8bb26";
-          bright3 = "fabd2f";
-          bright4 = "83a598";
-          bright5 = "d3869b";
-          bright6 = "8ec07c";
-          bright7 = "ebdbb2";
+          bright0 = "5d677a"; # bright black (dim gray)
+          bright1 = "e06c75";
+          bright2 = "98c379";
+          bright3 = "e5c07b";
+          bright4 = "61afef";
+          bright5 = "c678dd";
+          bright6 = "56b6c2";
+          bright7 = "dcdfe4";
+
+          urls = "0087bd";
+
+          selection-foreground = "000000";
+          selection-background = "fffacd";
         };
       };
     };
