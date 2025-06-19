@@ -24,14 +24,16 @@
     };
 
     adthand = {
-        url = "github:stdcout1/adthand";
+      url = "github:stdcout1/adthand";
     };
+
+    niri.url = "github:sodiboo/niri-flake";
 
 
   };
 
   # taken from https://github.com/notusknot/dotfiles-nix/blob/main/flake.nix 
-  outputs = { self, nixpkgs, nur, hardware, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nur, hardware, home-manager, niri, ... }@inputs:
     let
 
       # This lets us reuse the code to "create" a system
@@ -58,6 +60,7 @@
               nixpkgs.overlays = [
                 # Add nur overlay for Firefox addons
                 nur.overlays.default
+                niri.overlays.niri
                 # other overlays
                 #(import ./overlays)
               ];

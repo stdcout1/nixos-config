@@ -7,7 +7,9 @@
     firefox.enable = true;
     dunst.enable = true;
     hyprland.enable = true;
+    niri.enable = true;
     rofi-wayland.enable = true;
+    bemenu.enable = true;
     waybar.enable = true;
     foot.enable = true;
     fish.enable = true;
@@ -26,7 +28,6 @@
     rmapi.enable = true;
     hyprlock.enable = true;
     hypridle.enable = true;
-    jetbrains.idea-ultimate.enable = true;
 
   };
 }

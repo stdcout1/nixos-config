@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ inputs, pkgs, config,... }:
 
 
 {
@@ -8,7 +8,9 @@
     ./firefox
     ./dunst
     ./hyprland
+    ./niri
     ./rofi-wayland
+    ./bemenu
     ./waybar
     ./foot
     ./fish
