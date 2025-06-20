@@ -33,9 +33,6 @@
 
   # Other programs
 
-  environment.variables = {
-    WALLPAPERDIR = "$HOME/flake/pics";
-  };
 
   programs.light.enable = true;
 
