@@ -6,10 +6,11 @@
     # gui
     firefox.enable = true;
     dunst.enable = true;
-    hyprland.enable = true;
+    # hyprland.enable = true;
     niri.enable = true;
     rofi-wayland.enable = true;
     bemenu.enable = true;
+    fuzzel.enable = true;
     waybar.enable = true;
     foot.enable = true;
     fish.enable = true;

@@ -10,6 +10,7 @@
     ./hyprland
     ./niri
     ./rofi-wayland
+    ./fuzzel
     ./bemenu
     ./waybar
     ./foot

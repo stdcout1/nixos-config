@@ -7,6 +7,7 @@ let
   cfg = config.modules.niri;
 
   #function stolen from https://github.com/sodiboo/system/blob/main/personal/niri.mod.nix
+
   binds =
     { suffixes
     , prefixes
@@ -71,7 +72,11 @@ in
           { command = [ "waybar" ]; }
           { command = [ "dunst" ]; }
         ];
-        outputs."eDP-1".scale = 2;
+        outputs."eDP-1" = {
+          scale = 2;
+          backdrop-color = "#111111";
+          background-color = "#111111";
+        };
         input = {
           touchpad = {
             tap = true;
@@ -85,6 +90,7 @@ in
         prefer-no-csd = true;
 
         layout = {
+          background-color = "#111111";
           gaps = 2;
           border.width = 4;
           always-center-single-column = true;
@@ -92,15 +98,13 @@ in
 
           # fog of war
           focus-ring = {
-            # enable = true;
-            width = 10000;
-            active.color = "#00000055";
+            enable = false;
           };
-          # border.active.gradient = {
-          #   from = "red";
-          #   to = "blue";
-          #   in' = "oklch shorter hue";
-          # };
+          border.active.gradient = {
+            from = "red";
+            to = "blue";
+            in' = "oklch shorter hue";
+          };
 
           shadow.enable = true;
           # default-column-display = "tabbed";
@@ -128,9 +132,13 @@ in
           lib.attrsets.mergeAttrsList [
             {
               "Mod+T".action = spawn "foot";
-              "Mod+D".action = sh ''rofi -show drun -show-icons -terminal foot'';
+              "Mod+D".action = spawn "fuzzel";
+
+              "Mod+S".action = sh ''fd -e pdf -e djvu -e epub . ~ | fuzzel -d --width 80 --prompt "Open with Zathura:" \ | xargs -r -d '\n' -I {} zathura "{}"'';
 
               "Mod+L".action = spawn "hyprlock";
+
+              "Mod+O".action = toggle-overview;
 
               "Print".action = screenshot;
               "Mod+Shift+S".action.screenshot-screen = [ ];
@@ -166,8 +174,8 @@ in
               suffixes."Up" = "window-up";
               suffixes."Right" = "column-right";
               prefixes."Mod" = "focus";
-              prefixes."Mod+Ctrl" = "move";
-              prefixes."Mod+Shift" = "focus-monitor";
+              prefixes."Mod+Shift" = "move";
+              prefixes."Mod+Ctrl" = "focus-monitor";
               prefixes."Mod+Shift+Ctrl" = "move-window-to-monitor";
               substitutions."monitor-column" = "monitor";
               substitutions."monitor-window" = "monitor";
@@ -185,8 +193,8 @@ in
               suffixes."U" = "workspace-down";
               suffixes."I" = "workspace-up";
               prefixes."Mod" = "focus";
-              prefixes."Mod+Ctrl" = "move-window-to";
-              prefixes."Mod+Shift" = "move";
+              prefixes."Mod+Shift" = "move-window-to";
+              prefixes."Mod+Ctrl" = "move";
             })
 
             #just like hyprland!
