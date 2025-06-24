@@ -14,7 +14,7 @@ in
         auth.fingerprint.enabled = true;
         background = [
           {
-            path = ''~/flake/pics/rails.jpg'';
+            path = "screenshot";
             blur_passes = 3;
             contrast = 0.8916;
             brightness = 0.8172;
@@ -22,14 +22,9 @@ in
             vibrancy_darkness = 0.0;
           }
         ];
-        general = {
-          disable_loading_bar = true;
-        };
 
         input-field = [
           {
-            size.width = 250;
-            size.height = 60;
             outline_thickness = 2;
             dots_size = 0.2;
             dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
