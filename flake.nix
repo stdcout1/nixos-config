@@ -24,7 +24,7 @@
     };
 
     adthand = {
-      url = "github:stdcout1/adthand";
+      url = "github:stdcout1/adthand/interval";
     };
 
     niri.url = "github:sodiboo/niri-flake";
