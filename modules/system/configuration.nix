@@ -55,6 +55,8 @@
   # Hint electrons apps to use wayland...
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # use xwayland-satellite 
+
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";

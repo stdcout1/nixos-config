@@ -60,6 +60,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       swww
+      xwayland-satellite
     ];
     programs.niri = {
       enable = true;
@@ -71,6 +72,7 @@ in
           { command = [ "swww-randomize" "$HOME/flake/pics" ]; }
           { command = [ "waybar" ]; }
           { command = [ "dunst" ]; }
+          { command = [ "xwayland-satellite"]; }
         ];
         outputs."eDP-1" = {
           scale = 2;
@@ -87,6 +89,9 @@ in
           # mod-key = "Alt";
         };
 
+        environment = {
+            DISPLAY = ":0";
+        };
         prefer-no-csd = true;
 
         layout = {
