@@ -18,9 +18,9 @@ in
           margin-bottom = -2;
           position = "top";
           height = 26;
-          output = [
-            "eDP-1"
-          ];
+          # output = [
+          #   "eDP-1"
+          # ];
 
           modules-left = [ "custom/logo" "hyprland/workspaces" ];
           modules-right = [ "custom/adthand" "network" "clock" "pulseaudio" "battery" ];
