@@ -72,7 +72,7 @@ in
           { command = [ "swww-randomize" "$HOME/flake/pics" ]; }
           { command = [ "waybar" ]; }
           { command = [ "dunst" ]; }
-          { command = [ "xwayland-satellite"]; }
+          { command = [ "xwayland-satellite" ]; }
         ];
         outputs."eDP-1" = {
           scale = 2;
@@ -90,9 +90,10 @@ in
         };
 
         environment = {
-            DISPLAY = ":0";
+          DISPLAY = ":0";
         };
         prefer-no-csd = true;
+
 
         layout = {
           background-color = "#111111";
@@ -128,6 +129,10 @@ in
         hotkey-overlay.skip-at-startup = true;
 
         screenshot-path = "~/stuff/pictures/screenshots/%Y-%m-%dT%H:%M:%S.png";
+
+        switch-events = {
+          lid-close.action.spawn = [ "sh" "-c" "systemctl" "hibernate" ];
+        };
 
         binds =
           with config.lib.niri.actions;
