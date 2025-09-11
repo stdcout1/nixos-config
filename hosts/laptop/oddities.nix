@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, hardware, ... }:
 
 {
@@ -10,14 +9,20 @@
 
   # make lidclose suspend then hibernate to save battery
 
-  services.logind.lidSwitch = "suspend";
-  services.logind.powerKey = "ignore";
+  # services.logind.lidSwitch = "suspend";
+  # services.logind.powerKey = "ignore";
 
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
   };
-  
+
+
+  # for 3sh3 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
     "steam"
