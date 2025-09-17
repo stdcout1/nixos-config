@@ -95,6 +95,7 @@
     playerctl
     jq
     greetd.tuigreet
+    cachix # maybe we install at user levl?
   ];
 
   # xdg.portal.enable = true;
@@ -113,7 +114,7 @@
     settings.allowed-users = [ "nasir" ];
     package = pkgs.nixVersions.stable;
     extraOptions = ''
-      experimental-features = nix-command flakes 
+      experimental-features = nix-command flakes  
       trusted-users = root nasir
     '';
   };

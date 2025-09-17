@@ -59,6 +59,7 @@ in
 
       # C and cpp
       clang-tools #c and cpp
+      gnumake
 
       # Web dev
       nodePackages.typescript-language-server
@@ -70,6 +71,10 @@ in
       elmPackages.elm
       elmPackages.elm-format
       elmPackages.elm-live
+
+      # Haskell
+      haskell-language-server
+
 
       # Elixir
       elixir
