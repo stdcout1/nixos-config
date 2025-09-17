@@ -20,7 +20,8 @@
 
   # for 3sh3 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+  users.extraGroups.vboxusers.members = [ "nasir" ];
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; 
 
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
