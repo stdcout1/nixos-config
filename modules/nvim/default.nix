@@ -75,10 +75,13 @@ in
       # Haskell
       haskell-language-server
 
-
       # Elixir
       elixir
       elixir-ls
+
+      # LaTex 
+
+      (texliveMedium.withPackages (ps: with ps; [ listings xcolor tcolorbox pgf environ ]))
 
     ];
 
@@ -137,6 +140,10 @@ in
           plugin = nvim-lsp-zero;
           type = "lua";
           config = builtins.readFile (./remaps/lsp-zero.lua);
+        }
+        {
+            plugin = vimtex;
+            config = builtins.readFile (./remaps/vimtex.vim);
         }
         {
           plugin = nvim-treesitter.withAllGrammars;
