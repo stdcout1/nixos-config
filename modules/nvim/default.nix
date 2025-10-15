@@ -145,6 +145,7 @@ in
             plugin = vimtex;
             config = builtins.readFile (./remaps/vimtex.vim);
         }
+        cmp-vimtex
         {
           plugin = nvim-treesitter.withAllGrammars;
           type = "lua";
