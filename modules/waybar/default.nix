@@ -23,7 +23,7 @@ in
           # ];
 
           modules-left = [ "custom/logo" "hyprland/workspaces" ];
-          modules-right = [ "custom/adthand" "network" "clock" "pulseaudio" "battery" ];
+          modules-right = [ "custom/adthand" "network" "clock" "tray" "pulseaudio" "battery" ];
 
           "custom/logo" = {
             format = "";

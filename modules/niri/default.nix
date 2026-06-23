@@ -176,6 +176,8 @@ in
 
               "Mod+Tab".action = focus-window-down-or-column-right;
               "Mod+Shift+Tab".action = focus-window-up-or-column-left;
+
+              "Mod+V".action = toggle-window-floating;
             }
             # set up move controls for windows. 
             (binds {

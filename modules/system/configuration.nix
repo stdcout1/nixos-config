@@ -11,7 +11,14 @@
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.networkmanager = {
+    enable = true; # Easiest to use and most distros use this by default.
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+
+  };
+
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -118,6 +125,12 @@
       trusted-users = root nasir
     '';
   };
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

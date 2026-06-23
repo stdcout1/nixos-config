@@ -7,10 +7,28 @@
   services.libinput.touchpad.tapping = false;
   services.fprintd.enable = true;
 
-  # make lidclose suspend then hibernate to save battery
+  #some sane hibernation
+  boot.resumeDevice = "/dev/disk/by-uuid/57438ec0-d02b-4923-8142-d0308bf921af";
 
-  # services.logind.lidSwitch = "suspend";
-  # services.logind.powerKey = "ignore";
+  powerManagement.enable = true;
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024; # 32GB in MB
+    }
+  ];
+
+  services.logind.lidSwitch = "suspend-then-hibernate";
+  # Hibernate on power button pressed
+  services.logind.powerKey = "hibernate";
+  services.logind.powerKeyLongPress = "poweroff";
+
+  # Define time delay for hibernation
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=30m
+    SuspendState=mem
+  '';
+
 
   # Enable OpenGL
   hardware.graphics = {
@@ -21,7 +39,12 @@
   # for 3sh3 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "nasir" ];
-  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; 
+  boot.kernelParams = [
+    "kvm.enable_virt_at_load=0"
+    #hibernation
+    "resume_offset=131872768"
+    "mem_sleep_default=deep"
+  ];
 
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
